@@ -24,8 +24,8 @@ class ArticleController
     }
 
     function addCommentarie($content, $id_article, $id_user) {
-
-        $newCom = $this->articleRepository->createCommentarie($content, $id_article, $id_user);
+		$date = date('Y/m/d H:i:s');
+        $newCom = $this->articleRepository->createCommentarie($content, $id_article, $id_user, $date);
         
         if($newCom === false) {
             throw new Exception("Impossible d'ajouter votre avis pour le moment");
@@ -48,7 +48,8 @@ class ArticleController
     }
     function addArticle($title_article, $article, $id_user) {
         // Model
-        $request = $this->articleRepository->createArticle($title_article, $article, $id_user);
+		$date = date('Y/m/d H:i:s');
+        $request = $this->articleRepository->createArticle($title_article, $article, $id_user, $date);
         
         if(!$request) {
             throw new Exception("Impossible d'ajouter votre article pour le moment");

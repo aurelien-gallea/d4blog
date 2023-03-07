@@ -18,10 +18,11 @@ class ArticleRepository extends DBmanager
         return $request;
     }
 
-    public function createArticle($title, $article, $id_user) {
+    public function createArticle($title, $article, $id_user, $date) {
+		
         $bdd = $this->connection();
-        $request = $bdd->prepare('INSERT INTO '. $this::TABLE_ART .' (title, content, id_user) VALUES (?, ?, ?)');
-        $request->execute([$title, $article, $id_user]);
+        $request = $bdd->prepare('INSERT INTO '. $this::TABLE_ART .' (title, content, id_user, `date`) VALUES (?, ?, ?, ?)');
+        $request->execute([$title, $article, $id_user, $date]);
         return $request;
     }
     
@@ -52,10 +53,11 @@ class ArticleRepository extends DBmanager
         return $requestCom;
     }
 
-    public function createCommentarie($content, $id_article, $id_user) {
+    public function createCommentarie($content, $id_article, $id_user, $date) {
+		$date = date('Y/m/d H:i:s');
         $bdd = $this->connection();
-        $requestCom = $bdd->prepare('INSERT INTO '.$this::TABLE_COM.' (content, id_article, id_user) VALUES (?,?,?)');
-        $requestCom->execute([$content, $id_article, $id_user]);
+        $requestCom = $bdd->prepare('INSERT INTO '.$this::TABLE_COM.' (content, id_article, id_user, `date`) VALUES (?,?,?,?)');
+        $requestCom->execute([$content, $id_article, $id_user, $date]);
         return $requestCom;
     }
 

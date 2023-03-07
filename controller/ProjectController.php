@@ -54,7 +54,8 @@ class ProjectController {
         // Model
         if (!empty($_SESSION["id"])){
             $id_user = $_SESSION["id"];
-            $result = $this->projectRepository->addProject($title,$content,$id_user,$img);   
+            $date = date('Y/m/d H:i:s');
+            $result = $this->projectRepository->addProject($title,$content,$id_user,$img, $date);   
             if (!$result){
                 throw new Exception("Le projet ne peux pas etre CREER pour le moment si l'erreur persiste, merci de contacter l'administrateur"); 
                 exit();         
