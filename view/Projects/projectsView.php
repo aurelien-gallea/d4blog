@@ -25,7 +25,7 @@
     
     <?php if (!empty($project["img"])){ ?>
 
-        <div class="item-center"><img class="card-img-top mx-auto" src="src/img/<?=$project["img"] ?>" alt="Image of project"></div>
+        <div class="item-center"><img class="card-img-top mx-auto" src="./public/src/img/<?=$project["img"] ?>" alt="Image of project"></div>
     <?php } ?> 
 
         <div class="card-header">
