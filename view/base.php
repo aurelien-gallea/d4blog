@@ -12,12 +12,12 @@ if(isset($_SESSION['id'])) $me = Checker::getLoginAndRank($_SESSION['id']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title ?></title>
     <meta property="og:title" content="Diablo 4 Blog" />
+	<meta property="og:url" content="https://aurelien-gallea.students-laplateforme.io/d4blog/index.php">
     <meta
       property="og:description"
       content="Réalisé en duo, ce blog a pour thème diablo 4. N'hésitez pas a partagez vos impressions en commentaires."
     />
     <meta property="og:image" content="https://aurelien-gallea.students-laplateforme.io/d4blog/public/assets/images/diablo.jpg" >
-    <meta property="og:url" content="https://aurelien-gallea.students-laplateforme.io/d4blog/">
     <link href="./public/assets/images/favicon.ico" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href="./public/design/default.css">
     <script src="https://kit.fontawesome.com/2847cc80c5.js" crossorigin="anonymous"></script>
@@ -45,7 +45,7 @@ if(isset($_SESSION['id'])) $me = Checker::getLoginAndRank($_SESSION['id']);
 
                         
                         <img src="./public/assets/images/favicon.ico" alt="icone de tete de diablo" title="icone avec la tête de diablo">
-                        <p class="d-inline"><span class="<?= Checker::colorMyRank($me['rank']) ?> fs-5"><?= $me['login'] ?></span></p>
+                        <span class="<?= Checker::colorMyRank($me['rank']) ?> fs-5 align-middle"><?= $me['login'] ?></span>
                     </div>
                     <div>
                         <!-- pour le fun un petit score de participation -->
@@ -59,7 +59,7 @@ if(isset($_SESSION['id'])) $me = Checker::getLoginAndRank($_SESSION['id']);
         <?php } ?>
     </header>
     <?php if (isset($_SESSION['success'])) { ?>
-        <div class="mt-2 container alert alert-success"><?= $_SESSION["success"] ?></div>
+        <div class="alert alert-primary position-absolute  mt-7 start-50 translate-middle"><?= $_SESSION["success"] ?></div>
 
     <?php clearMessage();    
         }
@@ -67,7 +67,7 @@ if(isset($_SESSION['id'])) $me = Checker::getLoginAndRank($_SESSION['id']);
     ?>
 
     <?php if (isset($_SESSION['error'])) { ?>
-        <div class="mt-2 container alert alert-danger"><?= $_SESSION["error"] ?></div>
+        <div class="alert alert-primary position-absolute  mt-7 start-50 translate-middle"><?= $_SESSION["error"] ?></div>
     <?php clearMessage() ;
         }
         
