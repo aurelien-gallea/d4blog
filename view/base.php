@@ -59,7 +59,7 @@ if(isset($_SESSION['id'])) $me = Checker::getLoginAndRank($_SESSION['id']);
         <?php } ?>
     </header>
     <?php if (isset($_SESSION['success'])) { ?>
-        <div class="alert alert-primary position-absolute  mt-7 start-50 translate-middle"><?= $_SESSION["success"] ?></div>
+        <div class="alert alert-primary position-absolute  mt-7 start-50 translate-middle w-100 container-md text-center"><?= $_SESSION["success"] ?></div>
 
     <?php clearMessage();    
         }
@@ -67,7 +67,7 @@ if(isset($_SESSION['id'])) $me = Checker::getLoginAndRank($_SESSION['id']);
     ?>
 
     <?php if (isset($_SESSION['error'])) { ?>
-        <div class="alert alert-primary position-absolute  mt-7 start-50 translate-middle"><?= $_SESSION["error"] ?></div>
+        <div class="alert alert-primary position-absolute  mt-7 start-50 translate-middle w-100 container-md text-center"><?= $_SESSION["error"] ?></div>
     <?php clearMessage() ;
         }
         
