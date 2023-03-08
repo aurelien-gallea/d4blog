@@ -4,11 +4,11 @@ $title = "Contact";
 ob_start();
 
 ?>
-<div class="my-7 text-center"> 
+<div class="my-3 my-md-7 text-center"> 
 
     <h1>Contacter un membre de l'équipe:</h1>
 </div>
-<div class="m-7 d-flex flex-column flex-sm-row justify-content-center align-items-center mx-auto gap-5">
+<div class="m-3 m-md-7 d-flex flex-column flex-sm-row justify-content-center align-items-center mx-auto gap-5">
     <div class="bg-color2 d-flex flex-column align-items-center rounded pb-2">
         <img width="200" class="clip-photo" src="./public/assets/images/pascal.jfif" alt="pascal en photo" title="pascal en photo">
         <h2>Pascal</h2>

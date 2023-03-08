@@ -4,7 +4,7 @@ class DBManager {
 
     protected function connection () {
         try {
-            $bdd = new PDO('mysql:host=localhost:3306;dbname=tabdd;charset=utf8', 'nom', 'pass');
+            $bdd = new PDO('mysql:host=localhost:3301;dbname=blog;charset=utf8', 'root', 'root');
         }catch(Exception $e) {
             throw new Exception ('Erreur : '.$e->getMessage());
         }
