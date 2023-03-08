@@ -3,19 +3,6 @@ const found = document.querySelectorAll(".found");
 const selectDate = document.querySelector('#selectDate');
 const filterDate = document.querySelector('#filterDate');
 
-let arrayArticles = [];
-
-
-for (let a = 0; a <found.length; a++) {
-  arrayArticles.push(found[a]);
-  
-}
-
-let reverseArt =  arrayArticles.reverse();
-console.log(reverseArt[0].innerHTML);
-console.log(arrayArticles[0][0]);
-arrayArticles.reverse()
-console.log(arrayArticles.innerHTML);
 // notre belle barre de recherche
 searchBar.addEventListener('keyup', () => {
     
@@ -35,18 +22,23 @@ searchBar.addEventListener('keyup', () => {
     }   
   });
 
-// notre option de slection dans la barre de recherche 
+// notre option de selection dans la barre de recherche 
 selectDate.addEventListener('change', () => {
+
+  filterDate.innerHTML="";
   // c'est parti pour les boucles
+
   if (selectDate.value === "asc") {
-    filterDate.innerHTML="";
-    for (let j = 0; j < found.length; j++) {
-      filterDate.append(reverseArt[j].innerHTML.toString());  
+    // comme par défaut on affiche les articles par du plus récent au plus ancien on boucle à l'envers dans ce cas là
+
+    for (let j = found.length-1; j >= 0 ; j--) {
+      filterDate.appendChild(found[j]);  
     }
-  } else {
-    filterDate.innerHTML="";
+    
+  } else { 
+    
     for (let j = 0; j < found.length; j++) {
-      filterDate.innerHTML += arrayArticles[j].innerHTML;  
+      filterDate.appendChild(found[j]);   
     }
     
   }
