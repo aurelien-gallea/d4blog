@@ -11,6 +11,12 @@ class ArticleRepository extends DBmanager
         $stmt = $this->getAll($this::TABLE_ART);
         return $stmt;
     }
+    public function getAllArticlesByRecentContent() {
+        $bdd = $this->connection();
+        $request = $bdd->prepare('SELECT * FROM '. $this::TABLE_ART.' ORDER BY date DESC '); //dilemne entre date et edit_date
+        $request->execute();
+        return $request;
+    }
     public function getOneArticle($id_article) {
         $bdd = $this->connection();
         $request = $bdd->prepare('SELECT * FROM '. $this::TABLE_ART.' WHERE id=?');

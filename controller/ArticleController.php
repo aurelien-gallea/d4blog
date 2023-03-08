@@ -9,8 +9,8 @@ class ArticleController
     }
     
     function articles() {
-        
-        $request = $this->articleRepository->getAllArticles();
+        // on affiche les articles par modification la plus récente
+        $request = $this->articleRepository->getAllArticlesByRecentContent();
 
         require('./view/article/articlesView.php');
     }

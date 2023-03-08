@@ -7,54 +7,72 @@ ob_start();
 <div class="my-5">
 
     <h1>Articles</h1>
-
-    <p class="text-color2 fs-5">Voici la liste des Articles, cliquez sur "voir plus" pour y accéder :</p>
+    <div class="d-flex flex-column flex-lg-row align-items-center justify-content-around py-4 gap-3">
+        <div class="flex-grow-1">
+            <p class="text-color2 fs-5 mb-0 ">Voici la liste des Articles, cliquez sur "voir plus" pour y accéder :</p>
+        </div>
+        <div class="input-group flex-shrink-1 maxW-input">
+            <input id="searchBar" class="form-control form-control-lg" type="text" placeholder="Rechercher un article : mots / auteur / date">
+            <select name="selectDate" id="selectDate" class="input-group-text">
+                <option value="desc" selected>plus récent</option>
+                <option value="asc">plus ancient</option>
+            </select>
+            <label for="searchBar" class="input-group-text text-bg-primary"><i class="fa-solid fa-magnifying-glass"></i></label>
+        </div>
+    </div>
     <form action="index.php?page=article" method="post">
+        <!-- le contenu que l'on va trier -->
+        <div id="filterDate">
+            <?php
+            while ($articles = $request->fetch()) {
+                $author = Checker::getAuthor("articles", $articles['id_user']);
+            ?>
 
-        <?php
-        while ($articles = $request->fetch()) {
-            $author = Checker::getAuthor("articles", $articles['id_user']);
-        ?>
+                <div class="found">
 
-            <div class="card  mb-4">
-                <div class="card-header d-flex justify-content-between align-items-center">
-                    <h2 class="text-truncate"><?= $articles['title'] ?></h2>
+                    <div class="card  mb-4">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h2 class="text-truncate"><?= $articles['title'] ?></h2>
 
-                </div>
-                <div class="card-body">
+                        </div>
+                        <div class="card-body">
 
-                    <div class="text-truncate"><?=htmlspecialchars_decode($articles['content'])?> </div>
-                </div>
-                <div class="card-footer d-flex align-items-center justify-content-end gap-4">
-                    <div data-bs-toggle="tooltip" data-bs-placement="top" title="commentaires">
-                        <?= Checker::articleGotComs($articles['id']) ?><i class="mx-2 fa-regular fa-comment"></i>
+                            <div class="text-truncate"><?= htmlspecialchars_decode($articles['content']) ?> </div>
+                        </div>
+                        <div class="card-footer d-flex align-items-center justify-content-end gap-4">
+                            <div data-bs-toggle="tooltip" data-bs-placement="top" title="commentaires">
+                                <?= Checker::articleGotComs($articles['id']) ?><i class="mx-2 fa-regular fa-comment"></i>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <div>
+                                <p>ecrit par : <span class="fw-bold <?= Checker::colorMyRank($author['rank']) ?>"><?= $author['login'] ?></span>
+                                    <?php if ($articles['date'] != $articles['edit_date']) { ?>
+                                        <span class="badge bg-primary ms-1" data-bs-toggle="tooltip" data-bs-placement="right" title="<?= DateToFr::dateFR($articles['edit_date']) ?>">Mis à jour</span>
+
+                                    <?php  } ?>
+                                </p>
+                                <p>le : <?= DateToFr::dateFR($articles['date']) ?> </p>
+                            </div>
+                            <div class="text-bg-dark rounded-3">
+                                <button class="btn btn-outline-light" type="submit" value="<?= $articles['id'] ?>" name="article">Voir plus</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="card-footer d-flex align-items-center justify-content-between">
-                    <div>
-                        <p>ecrit par : <span class="fw-bold <?= Checker::colorMyRank($author['rank']) ?>"><?= $author['login'] ?></span>
-                        <?php if ($articles['date'] != $articles['edit_date']) { ?>
-                            <span class="badge bg-primary ms-1" data-bs-toggle="tooltip" data-bs-placement="right" title="<?= DateToFr::dateFR($articles['edit_date']) ?>">Mis à jour</span>
-                            
-                            <?php  } ?>
-                        </p>
-                        <p>le : <?= DateToFr::dateFR($articles['date']) ?> </p>
-                    </div>
-                    <div class="text-bg-dark rounded-3">
-                        <button class="btn btn-outline-light" type="submit" value="<?= $articles['id'] ?>" name="article">Voir plus</button>
-                    </div>
-                </div>
-            </div>
-        <?php
-        }
-        ?>
+            <?php
+            }
+            ?>
+        </div>
 
     </form>
 
 </div>
 
 <?php
-
 $content = ob_get_clean();
-
+ob_start(); ?>
+<script src="./public/assets/js/finder.js"></script>
+<?php
+$script = ob_get_clean();
 require('./view/base.php');

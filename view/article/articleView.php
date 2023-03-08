@@ -131,6 +131,7 @@ ob_start(); ?>
 <!-- <script src="assets/js/textFormatKeeper.js"></script>  Nous avons pris la décision de passer à Tiny donc ce script n'est plus utile, je le laisse juste pour la correction, il sera dégagé à terme -->
 <?php if (isset($_SESSION['id'])) { ?>
     <script src="./public/assets/js/counterCom.js"></script>
+    <script src="./public/assets/js/commentManager.js"></script>
 <?php }
 $script = ob_get_clean();
 require('./view/base.php');
