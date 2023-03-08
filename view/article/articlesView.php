@@ -12,9 +12,9 @@ ob_start();
             <p class="text-color2 fs-5 mb-0 ">Voici la liste des Articles, cliquez sur "voir plus" pour y accéder :</p>
         </div>
         <div class="input-group  maxW-input border border-3 border-primary">
-            <label for="searchBar" class="input-group-text text-bg-primary border-0"><i class="fa-solid fa-magnifying-glass"></i></label>
+            <label for="searchBar" class="input-group-text text-bg-warning border-0"><i class="fa-solid fa-magnifying-glass"></i></label>
             <input id="searchBar" class="form-control form-control " type="text" placeholder="Rechercher un article : mots, auteur...">
-            <select name="selectDate" id="selectDate" class="input-group-text px-0 text-bg-primary border-0">
+            <select name="selectDate" id="selectDate" class="input-group-text px-0 text-bg-warning border-0">
                 <option value="desc" selected>plus récent</option>
                 <option value="asc">plus ancien</option>
             </select>
