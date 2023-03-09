@@ -58,8 +58,8 @@ ob_start();
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-center">
 
-                            <div class="text-bg-dark rounded-pill">
-                                <button class="btn btn-outline-light rounded-pill border-0 px-5 px-sm-7" type="submit" value="<?= $articles['id'] ?>" name="article">Voir plus</button>
+                            <div class="text-bg-warning rounded-pill border border-2 border-warning">
+                                <button class="btn btn-outline-light rounded-pill  px-5 px-sm-7" type="submit" value="<?= $articles['id'] ?>" name="article">Voir plus</button>
                             </div>
                         </div>
                     </div>

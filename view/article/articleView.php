@@ -40,12 +40,12 @@ ob_start();
             </div>
             <div class="card-footer d-flex justify-content-center align-items-center">
 
-                <div class="text-bg-dark rounded-pill border-0">
-                    <div id="btnCom" class="btn rounded-pill py-2 px-4 btn-outline-light  border-0">
+                <div class="text-bg-warning rounded-pill" data-bs-toggle="tooltip" data-bs-placement="top" title="commentaires">
+                    <div id="btnCom" class="btn rounded-pill py-2 px-4 btn-outline-light  border border-2 border-warning">
 
-                        <div data-bs-toggle="tooltip" data-bs-placement="top" title="commentaires">
+                        
                             <small class="showMe me-2">Afficher</small><span><?= Checker::articleGotComs($article['id']) ?></span><i class="mx-2 fa-regular fa-comment"></i>
-                        </div>
+                        
                     </div>
                 </div>
 
@@ -87,8 +87,8 @@ ob_start();
         </div>
         <div>
             <?php if (isset($_SESSION['id'])) { ?>
-                <div class="fixed-bottom d-flex justify-content-end align-items-center mb-5 me-md-5">
-                    <div id="bubble" class="btn rounded-pill border border-3 border-primary  p-3 text-color2  bg-color4 " data-bs-toggle="tooltip" data-bs-placement="top" title="Ouvrir">
+                <div class="fixed-bottom d-flex justify-content-end align-items-center mb-5 me-2 me-md-5">
+                    <div id="bubble" class="btn rounded-pill border border-3 border-primary  p-3 text-white  bg-color4 " data-bs-toggle="tooltip" data-bs-placement="top" title="Ouvrir">
                         <i class="fa-solid fa-comments fs-4"></i>
                     </div>
                 </div>
@@ -112,7 +112,7 @@ ob_start();
                                 <button class="btn rounded-pill border border-primary p-2 btn-outline-color2" name="addCom" type="submit"><i class="fa-solid fa-paper-plane text-danger me-1"></i></button>
                             </div>
                         </div>
-                        <div id="countCom" class="m-0 p-0 text-color2">1024 caractères restants.</div>
+                        <div id="countCom" class="ms-2 p-0 text-white">1024 caractères restants.</div>
                     </div>
                 </form>
             <?php } else { ?>
