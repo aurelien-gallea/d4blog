@@ -41,25 +41,30 @@ ob_start();
                 <?= $res["rank"]?>
             </td>
             <td>
-                <div class="btn-group">
-                    <!-- Passer admin -->
-                    <form method="POST"  action="index.php?page=admin">
-                        <button type="submit" name="promote" id="promote" value="<?= $res["id"] ?>" >Promouvoir</button>
-                    </form>
-                    <!-- Passer user -->
-                    <form method="POST"  action="index.php?page=admin">
-                        <button type="submit" name="demote" id="demote" value="<?= $res["id"] ?>" >utilisateur</button>
-                    </form>
-                    <!-- Supprimer l'utilisateur de la base de donnée -->
-                    <form method="POST"  action="index.php?page=admin">
-                        <button type="submit" name="delete" id="delete" value="<?= $res["id"] ?>" >Supprimer</button>
-                    </form>                    
-                    <!-- Supprimer toute les contributions de l'utilisateur de la base de donnée -->
-                    <form method="POST"  action="index.php?page=admin">
-                        <button type="submit" name="erase" id="erase" value="<?= $res["id"] ?>" >Effacer</button>
-                    </form>                    
-                </div>
-                
+                <div class=" dropdown">
+                    <button id="Admin"class="btn btn-primary dropdown-toggle"type="button"data-bs-toggle="dropdown">Actions</button>
+                    <div class="dropdown-menu bg-warning "aria-labbeledby="Admin">
+                        <!-- Passer admin -->
+                      
+                            <form  method="POST"  action="index.php?page=admin">
+                                <button  class="dropdown-item btn" type="submit" name="promote" id="promote" value="<?= $res["id"] ?>" data-bs-toggle="tooltip" data-bs-placement="top" title="Modifie le rang au grade 'administrateur'."  >Promouvoir</button>
+                            </form>                       
+                        <!-- Passer user -->                      
+                            <form  method="POST"  action="index.php?page=admin">
+                                <button class="dropdown-item btn " type="submit" name="demote" id="demote" value="<?= $res["id"]?>" data-bs-toggle="tooltip" data-bs-placement="top" title="Modifie le rang au grade 'user'." >Utilisateur</button>
+                            </form>
+                       
+                        
+                        <!-- Supprimer l'utilisateur de la base de donnée -->
+                        <form method="POST"  action="index.php?page=admin">
+                            <button  class="dropdown-item btn "type="submit" name="delete" id="delete" value="<?= $res["id"] ?>"  data-bs-toggle="tooltip" data-bs-placement="top" title="Supprimer l'utilisateur de la base de donnée mais garde ces contributions" >Supprimer</button>
+                        </form>                    
+                        <!-- Supprimer toute les contributions de l'utilisateur de la base de donnée -->
+                        <form method="POST"  action="index.php?page=admin">
+                            <button  class="dropdown-item btn " type="submit" name="erase" id="erase" value="<?= $res["id"] ?>" data-bs-toggle="tooltip" data-bs-placement="top" title="Supprimer l'utilisateur de la base de donnée ainsi que ces contributions"  >Effacer</button>
+                        </form>
+                    </div>                    
+                </div>                
             </td>
         </tr>
          
