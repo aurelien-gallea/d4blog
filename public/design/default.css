@@ -11860,11 +11860,6 @@ html, body {
   height: 100%;
 }
 
-.card-img-top {
-  height: auto;
-  width: 25%;
-}
-
 body {
   background: #0b0c11 url(../src/img/bg.webp) no-repeat 50% top;
   font-family: "Old Fenris", Arial, Helvetica, sans-serif;

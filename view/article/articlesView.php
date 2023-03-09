@@ -13,7 +13,7 @@ ob_start();
         </div>
         <div class="input-group  maxW-input border border-3 bg-warning border-primary">
             <label for="searchBar" class="input-group-text text-bg-warning border-0"><i class="fa-solid fa-magnifying-glass"></i></label>
-            <input id="searchBar" class="form-control form-control my-2 rounded-pill" type="text" placeholder="Rechercher un article : mots, auteur...">
+            <input id="searchBar" class="form-control form-control my-2 rounded-pill border-0" type="text" placeholder="Rechercher un article : mots, auteur...">
             <select name="selectDate" id="selectDate" class="input-group-text text-bg-warning border-0 p-0">
                 <option class="align-middle" selected>Trier par :</option>
                 <option class="align-middle" value="asc">Plus Ancien</option>
