@@ -1,6 +1,6 @@
 <?php
     // definition des variables
-    $title = "Creer votre Projet";
+    $title = "Creer votre Actu";
     $button = '<button class="btn btn-success mb-3" type="submit"  >Creer le projet </button>';
     $form= '<form class="form" method="post" enctype="multipart/form-data" action="index.php?page=createProject">' ;   
     $project= array("title"=>"" ,"content"=>"","id_user"=>"","img"=>"");
