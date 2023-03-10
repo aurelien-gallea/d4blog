@@ -40,7 +40,7 @@ if(isset($_SESSION['id'])) $me = Checker::getLoginAndRank($_SESSION['id']);
             
              ?>
             <div class="bg-color4">
-                <div class="container d-flex justify-content-between align-items-center flex-wrap text-color2">
+                <div class="container d-flex justify-content-around align-items-center flex-wrap text-color2">
                     <div>
 
                         
