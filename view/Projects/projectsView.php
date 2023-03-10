@@ -1,11 +1,12 @@
 <?php
-    if(!empty($_SESSION["id"])){
-        $user=Checker::getLoginAndRank($_SESSION["id"]);
-    }
-    $title = "Acceuil";
-    ob_start();
+if (!empty($_SESSION["id"])) {
+    $user = Checker::getLoginAndRank($_SESSION["id"]);
+}
+$title = "Acceuil";
+ob_start();
 ?>
 <div class="my-5">
+
     <h1> Derniers Actualités </h1>
 <?php 
     if (isset($_GET["success"])){
@@ -13,39 +14,35 @@
 
         <p class="card m-2 p-1 bg-success d-inline-block"><?=$_GET["message"] ?></p>  
 <?php }
-}           
+}      
 
-    while($project = $requete->fetch()) {   
-    $author = Checker::getAuthor("projects", $project['id_user']) ;
-    $likes = new ProjectController(new ProjectRepository);
-    $like = $likes->getNumberLike($project["id"])
-   
+while ($project = $requete->fetch()) {
+		$author = Checker::getAuthor("projects", $project['id_user']);
+		$likes = new ProjectController(new ProjectRepository);
+		$like = $likes->getNumberLike($project["id"])
+				
 ?>
-    <div class="card mt-4">
-    
-    <?php if (!empty($project["img"])){ ?>
+<div class="card mt-4">
+			<div class="card-header h2">
+					<b><?= $project['title'] ?></b>
+			</div>
+			<div class="card-header  d-flex flex-column justify-content-between">
+					<div class="mb-2 fs-5">
+							Ecrit par : <span class="fw-bold <?= Checker::colorMyRank($author['rank']) ?>"><?= $author['login'] ?></span>
+					</div>
+					<i class="fs-7"><?= DateToFr::dateFR($project['date']) ?></i>
+			</div>
+				<?php if (!empty($project["img"])) { ?>
 
-        <div class="item-center"><img class="card-img-top mx-auto" src="./public/src/img/<?=$project["img"] ?>" alt="Image of project"></div>
-    <?php } ?> 
-
-        <div class="card-header">
-            <b><?= $project['title'] ?></b>
-        </div>
-        <div class="card-body">
+                <div class="item-center"><img class="w-100 mx-auto" src="./public/src/img/<?= $project["img"] ?>" alt="Image of project"></div>
+         <?php } ?>
+      <div class="card-body">
             <p class="card-text"> <?=htmlspecialchars_decode($project["content"]) ?></p>                   
-            <p class="card-subtitle">               
-            </p>
-        </div>
-           
+            
+        </div>          
 
         <div class="card-footer">
             <div class="row justify-content-between">
-                <div class="col-10 col-md-4 order-1">
-                    <p>Ecrit par : <span class="fw-bold <?= Checker::colorMyRank($author['rank']) ?>"><?= $author['login'] ?></span> <br>
-                    <i>Le : <?= DateToFr::dateFR($project['date']) ?></i></p>
-                </div>
-            
-                
                 <div class="col-12 col-md-4 order-3 order-md-2 text-center">
                     <!-- Gestion des likes -->
                     <form class="col" method="get" action="index.php?" > 
@@ -67,7 +64,8 @@
                 </div>
                 
                 <!-- reserver a l'admin -->
-                <?php if (!empty($user['rank'])){ if ($user['rank'] == "admin"){ ?>  
+                <?php if (!empty($user['rank'])){
+									if ($user['rank'] == "admin"){ ?> 
                 
                 
                 <form class="col-2 col-md-4 order-2 order-md-3 " method="get" action="index.php" >    
@@ -99,4 +97,3 @@ if ($user['rank'] == "admin"){
 $content = ob_get_clean();
 require_once("./view/base.php");
 ?>
-

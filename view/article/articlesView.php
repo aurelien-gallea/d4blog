@@ -13,7 +13,7 @@ ob_start();
         </div>
         <div class="input-group  maxW-input border border-3 bg-warning border-primary">
             <label for="searchBar" class="input-group-text text-bg-warning border-0"><i class="fa-solid fa-magnifying-glass"></i></label>
-            <input id="searchBar" class="form-control form-control my-2 rounded-pill" type="text" placeholder="Rechercher un article : mots, auteur...">
+            <input id="searchBar" class="form-control form-control my-2 rounded-pill border-0" type="text" placeholder="Rechercher un article : mots, auteur...">
             <select name="selectDate" id="selectDate" class="input-group-text text-bg-warning border-0 p-0">
                 <option class="align-middle" selected>Trier par :</option>
                 <option class="align-middle" value="asc">Plus Ancien</option>
@@ -36,6 +36,17 @@ ob_start();
                             <h2 class="text-truncate"><?= $articles['title'] ?></h2>
 
                         </div>
+                        <div>
+                            <div class="card-header d-flex flex-column justify-content-between">
+                                <div class="mb-2 fs-5">écrit par : <span class=" fw-bold <?= Checker::colorMyRank($author['rank']) ?>"><?= $author['login'] ?></span>
+                                    <?php if ($articles['date'] != $articles['edit_date']) { ?>
+                                        <span class="badge bg-primary mx-1" data-bs-toggle="tooltip" data-bs-placement="right" title="<?= DateToFr::dateFR($articles['edit_date']) ?>">Mis à jour</span>
+
+                                    <?php  } ?>
+                                </div>
+                                <span class="fs-7"><?= DateToFr::dateFR($articles['date']) ?> </span>
+                            </div>
+                        </div>
                         <div class="card-body">
 
                             <div class="text-truncate"><?= htmlspecialchars_decode($articles['content']) ?> </div>
@@ -45,18 +56,10 @@ ob_start();
                                 <?= Checker::articleGotComs($articles['id']) ?><i class="mx-2 fa-regular fa-comment"></i>
                             </div>
                         </div>
-                        <div class="card-footer d-flex align-items-center justify-content-between">
-                            <div>
-                                <p>ecrit par : <span class="fw-bold <?= Checker::colorMyRank($author['rank']) ?>"><?= $author['login'] ?></span>
-                                    <?php if ($articles['date'] != $articles['edit_date']) { ?>
-                                        <span class="badge bg-primary ms-1" data-bs-toggle="tooltip" data-bs-placement="right" title="<?= DateToFr::dateFR($articles['edit_date']) ?>">Mis à jour</span>
+                        <div class="card-footer d-flex align-items-center justify-content-center">
 
-                                    <?php  } ?>
-                                </p>
-                                <p>le : <?= DateToFr::dateFR($articles['date']) ?> </p>
-                            </div>
-                            <div class="text-bg-dark rounded-3">
-                                <button class="btn btn-outline-light" type="submit" value="<?= $articles['id'] ?>" name="article">Voir plus</button>
+                            <div class="text-bg-warning rounded-pill border border-2 border-warning">
+                                <button class="btn btn-outline-light rounded-pill  px-5 px-sm-7" type="submit" value="<?= $articles['id'] ?>" name="article">Voir plus</button>
                             </div>
                         </div>
                     </div>
