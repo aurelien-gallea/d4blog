@@ -99,6 +99,7 @@ html,body {
 body{ 
     background: #0b0c11 url(../src/img/bg.webp) no-repeat 50% top;
     font-family: "Old Fenris";
+    
 }
 
 h1,h2,h3,.btn,.label,.alert {
@@ -120,10 +121,10 @@ h1,h2,h3,h4,h5,h6 {
     border-radius: 50rem;
     overflow: hidden;
 }
+// Permet de gerer les text trop long sur un tableaux
+// Conserve une taille equivalente pour tous les colonnes.
+// utilise pour utiliser la classe  .text-truncate
 
-.dropdown {
-    .btn::hover {
-        background-color: white;
-        color: $color2;
-    }
+.table {
+    table-layout: fixed;
 }
