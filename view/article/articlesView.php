@@ -52,7 +52,7 @@ ob_start();
                             <div class="text-truncate"><?= htmlspecialchars_decode($articles['content']) ?> </div>
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-end gap-4">
-                            <div data-bs-toggle="tooltip" data-bs-placement="top" title="commentaires">
+                            <div class="checkCom" data-bs-toggle="tooltip" data-bs-placement="top" title="commentaires">
                                 <?= Checker::articleGotComs($articles['id']) ?><i class="mx-2 fa-regular fa-comment"></i>
                             </div>
                         </div>

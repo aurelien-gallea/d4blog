@@ -29,7 +29,7 @@ selectDate.addEventListener('change', () => {
   // c'est parti pour les boucles
 
   if (selectDate.value === "asc") {
-    // comme par défaut on affiche les articles par du plus récent au plus ancien on boucle à l'envers dans ce cas là
+    // comme par défaut on affiche les articles par du plus récent au plus ancien on boucle à l'envers dans ce cas là, et puis j'aime bien boucler à l'envers !
 
     for (let j = found.length-1; j >= 0 ; j--) {
       filterDate.appendChild(found[j]);  
