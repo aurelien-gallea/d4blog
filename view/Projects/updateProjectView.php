@@ -11,7 +11,7 @@
     // definition des variables
     $title = "Editer votre Projet";
     $form = '<form class="form" method="post" enctype="multipart/form-data" action="index.php?page=updateBddProject" > ' ;   
-    $button = '<button class="btn btn-success mb-3" type="submit" name="updateBddId" id="updateBddId"  value="'.$project["id"].'" >Modifier</button>';
+    $button = '<button class="btn btn-primary mb-3" type="submit" name="updateBddId" id="updateBddId"  value="'.$project["id"].'" >Modifier</button>';
     // Appel de la formProjectView
 
     ob_start();

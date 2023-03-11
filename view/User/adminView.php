@@ -62,11 +62,11 @@ ob_start();
                             
                             <!-- Supprimer l'utilisateur de la base de donnée -->
                             <form method="POST"  action="index.php?page=admin">
-                                <button  class="dropdown-item btn"type="submit" name="delete" id="delete" value="<?= $res["id"] ?>"  data-bs-toggle="tooltip" data-bs-placement="top" title="Supprimer l'utilisateur de la base de donnée mais garde ces contributions" >Supprimer</button>
+                                <button  class="dropdown-item btn"type="submit" name="delete" id="delete" value="<?= $res["id"] ?>"  data-bs-toggle="tooltip" data-bs-placement="top" title="Supprimer l'utilisateur de la base de donnée mais garde ses contributions" >Supprimer</button>
                             </form>                    
                             <!-- Supprimer toute les contributions de l'utilisateur de la base de donnée -->
                             <form method="POST"  action="index.php?page=admin">
-                                <button  class="dropdown-item btn" type="submit" name="erase" id="erase" value="<?= $res["id"] ?>" data-bs-toggle="tooltip" data-bs-placement="top" title="Supprimer l'utilisateur de la base de donnée ainsi que ces contributions"  >Effacer</button>
+                                <button  class="dropdown-item btn" type="submit" name="erase" id="erase" value="<?= $res["id"] ?>" data-bs-toggle="tooltip" data-bs-placement="top" title="Supprimer l'utilisateur de la base de donnée ainsi que ses contributions"  >Effacer</button>
                             </form>
                         </div> 
                     </div>        
