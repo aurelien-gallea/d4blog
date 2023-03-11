@@ -43,7 +43,7 @@ while ($project = $requete->fetch()) {
 
         <div class="card-footer">
             <div class="row justify-content-between">
-                <div class="col-12 col-md-4 order-3 order-md-2 text-center">
+                <div class="col-8 col-md-4 text-center">
                     <!-- Gestion des likes -->
                     <form class="col" method="get" action="index.php?" > 
                         <!-- verifions si l'utilisateur est connecté -->
@@ -68,7 +68,7 @@ while ($project = $requete->fetch()) {
 									if ($user['rank'] == "admin"){ ?> 
                 
                 
-                <form class="col-2 col-md-4 order-2 order-md-3 " method="get" action="index.php" >    
+                <form class="col-2 col-md-4 " method="get" action="index.php" >    
                     <div class="dropstart">
                         <!-- Bouton -->
                         <button id="myButton" class="btn float-end" type="button" data-bs-toggle="dropdown">
