@@ -18,8 +18,8 @@ Les Projets sur notre site représente les grosses actualités vis a vis du jeux
 - Uniquement créé par un administrateur
 
 ## Articles:
-- peuvent être écrit par Administrateurs connectés.
-- uniquement les admins peuvent éditer ou supprimer un article.
+- peuvent être écrit par les utilisateurs connectés.
+- uniquement les auteurs/admins peuvent éditer ou supprimer un article.
 - possèdent des commentaires.
 - le nombre de commentaires est affiché.
 
@@ -46,6 +46,13 @@ Les Projets sur notre site représente les grosses actualités vis a vis du jeux
 - compteur de vues.
 - ajout de frameworks côté front voire coté back.
 - en fait il y a tellements de possibilités que c'est difficile de les citer.
+
+
+### questions en suspens :
+
+- affichage des cartes sociales (s'affichent sur dnschecker) ...
+- gestion du .htaccess en mvc 
+- recuperer les scripts bootstrap dans vendor ... 
 
 
 
