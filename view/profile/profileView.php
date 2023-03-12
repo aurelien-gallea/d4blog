@@ -80,12 +80,12 @@ ob_start();
             </div>
             <?php while ($result = $projects->fetch()) { ?>
                 <form action="index.php" method="post">
-                    <div class="border rounded my-4">
+                    <div class="rounded my-4">
                         <button class="rounded w-100 bg-color2" type="submit" name="project" value="<?= $result['id'] ?>">
                             <div class="mt-2 text-truncate">
                                 <span class="h4"><?= $result['title']?></span>
-                                <hr>
-                                <div class="text-truncate p-2">
+                                <hr class="m-2">
+                                <div class="text-truncate pb-2">
                                 <span class="fs-7">Ecrit le : <?= DateToFr::dateFR($result['date']) ?></span> 
                             </div>
                                 
@@ -107,8 +107,8 @@ ob_start();
                             <div class="text-truncate mt-2">
                                 <span class="h4"><?= $result['title'] ?></span> 
                             </div>
-                            <hr>
-                            <div class="p-2 fs-7 text-truncate">Ecrit le : <?= DateToFr::dateFR($result['date']) ?></div>
+                            <hr class="m-2">
+                            <div class="pb-2 fs-7 text-truncate">Ecrit le : <?= DateToFr::dateFR($result['date']) ?></div>
                             
                             <!-- afficher le contenu de l'article n'est pas pertinent ici, le titre et la date suffiront, il ne s'agit que d'un lien après tout -->
                         </button>
@@ -128,9 +128,9 @@ ob_start();
             <div class="my-4">
                 <button class="rounded w-100 bg-color2" type="submit" name="article" value="<?= $result['id_article'] ?>">
                     <div class="mt-2 text-truncate fs-7"><span> Ecrit le : <?= DateToFr::dateFR($result['date']) ?></span></div>
-                    <hr>
+                    <hr class="m-2">
                     <div class="w-100">
-                        <p class="text-truncate"><?= $result['content'] ?> </p>
+                        <p class=" text-break"><?= $result['content'] ?> </p>
                     </div>
                 </button>
             </div>
