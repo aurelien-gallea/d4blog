@@ -10,15 +10,16 @@ Sujet : Diablo 4.
 
 # Contenu:
 
-## Projets: 
+## Projets:
+Les Projets sur notre site représente les grosses actualités vis a vis du jeux.
 - une image 
 - peuvent être modifiés ou supprimés par un administrateur
-- système de like ( a implémenter)
-- Uniquement Créé par un administrateur
+- système de like
+- Uniquement créé par un administrateur
 
 ## Articles:
-- peuvent être écrit par un utilisateur connecté.
-- uniquement l'auteur et les admins peuvent éditer ou supprimer un article.
+- peuvent être écrit par Administrateurs connectés.
+- uniquement les admins peuvent éditer ou supprimer un article.
 - possèdent des commentaires.
 - le nombre de commentaires est affiché.
 
@@ -34,7 +35,6 @@ Sujet : Diablo 4.
 - suppression d'un utilisateur et de ses contributions 
 
 ## Profil :
-
 - accès au contributions
 - scores dépendant de ses contributions (affiché également dans le liseré sous le header, si connecté)
 - modification de l'adresse mail et du MDP
