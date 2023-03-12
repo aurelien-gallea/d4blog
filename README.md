@@ -46,6 +46,7 @@ Les Projets sur notre site représente les grosses actualités vis a vis du jeux
 - compteur de vues.
 - ajout de frameworks côté front voire coté back.
 - en fait il y a tellements de possibilités que c'est difficile de les citer.
+- Forcer l'usage de mot de passe plus sécurisé
 
 
 ### questions en suspens :
