@@ -65,8 +65,8 @@ ob_start();
             <?php if ($res['rank'] == 'admin') { ?>
 
                 <span class=" fs-4 text-color2">Nombres de projets : <?= $projects->rowCount() ?></span>
+                <?php } ?>
                 <span class=" fs-4 text-color2">Nombres d'articles : <?= $articles->rowCount() ?></span>
-            <?php } ?>
             <span class=" fs-4 text-color2">Nombres de commentaires : <?= $commentaries->rowCount() ?></span>
         </div>
     </div>
@@ -93,7 +93,8 @@ ob_start();
                         </button>
                     </div>
                 </form>
-            <?php } ?>
+            <?php } 
+        }?>
         </div>
         <div class="col-12 col-md-8 col-lg-6 bg-warning rounded mt-4 p-4">
             <div>
@@ -116,7 +117,7 @@ ob_start();
                 </form>
             <?php } ?>
         </div>
-<?php }
+<?php 
                 } ?>
 <div class="col-12 col-md-8 col-lg-6 bg-warning rounded my-4 p-4">
     <div>
