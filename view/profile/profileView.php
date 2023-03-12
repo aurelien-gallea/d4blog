@@ -93,9 +93,9 @@ ob_start();
                         </button>
                     </div>
                 </form>
+        </div>
             <?php } 
         }?>
-        </div>
         <div class="col-12 col-md-8 col-lg-6 bg-warning rounded mt-4 p-4">
             <div>
                 <h2 class="text-center"><i class="fa-solid fa-newspaper"></i> Mes Articles :</h2>
