@@ -9,7 +9,7 @@
                 if ($_FILES["img"]["size"] < 3000000){                   
                     $informationsImage = pathinfo($_FILES["img"]["name"]);
                     $extensionImage = $informationsImage["extension"];
-                    $extensionArray = ["png","gif","jpg","jpeg"];
+                    $extensionArray = ["png","gif","jpg","jpeg","webp"];
 
                     if (in_array($extensionImage,$extensionArray)){
                         $img = time().rand().rand().'.'.$extensionImage;
@@ -24,4 +24,3 @@
             }             
         }
     }
-    
