@@ -25,8 +25,10 @@ ob_start();
                 </div>
             </div>
             <div class="card-header d-flex flex-column justify-content-between">
-                <div class="mb-2 fs-5">écrit par : <span class=" fw-bold <?= Checker::colorMyRank($author['rank']) ?>"><?= $author['login'] ?></span>
-                    <?php if ($article['date'] != $article['edit_date']) { ?>
+                <!-- on défini un code couleur par range utilisateur  -->
+            <div class="mb-2 fs-5">écrit par : <span class=" fw-bold <?= Checker::colorMyRank($author['rank']) ?>"><?= $author['login'] ?></span>
+                   <!-- si l'article est modifié on fait apparaître un badge avec la date de modification sur le tooltip  -->
+            <?php if ($article['date'] != $article['edit_date']) { ?>
                         <span class="badge bg-primary mx-1" data-bs-toggle="tooltip" data-bs-placement="right" title="<?= DateToFr::dateFR($article['edit_date']) ?>">Mis à jour</span>
 
                     <?php  } ?>
@@ -53,6 +55,7 @@ ob_start();
             </div>
 
         </div>
+        <!-- les bloc commentaires -->
         <div class="showHidden d-none mb-5">
         <?php }
 
@@ -86,6 +89,7 @@ ob_start();
 
         </div>
         <div>
+            <!-- on affiche soit une invation à se connecter pour pouvoir commenter /soit la bull pour pouvoir commenter -->
             <?php if (isset($_SESSION['id'])) { ?>
                 <div class="d-flex justify-content-end align-items-center mb-5 me-2 me-md-5">
                     <div id="bubble" class="btn rounded-pill border border-3 border-primary  p-3 text-white  bg-color4 " data-bs-toggle="tooltip" data-bs-placement="top" title="Ouvrir">

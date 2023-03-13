@@ -61,7 +61,7 @@ ob_start();
     <div class="col-12 col-md-8 col-lg-6 bg-warning rounded mt-4 p-4">
         <div class="d-flex flex-column ">
             <h2 class="align-self-center"><span><i class="fa-solid fa-star"></i></span> Mes Stats : </h2>
-            <!-- les conditions avec la boucle principale -->
+            <!-- affichage en focntion du rang utilisateur -->
             <?php if ($res['rank'] == 'admin') { ?>
 
                 <span class=" fs-4 text-color2">Nombres de projets : <?= $projects->rowCount() ?></span>
@@ -70,9 +70,10 @@ ob_start();
             <span class=" fs-4 text-color2">Nombres de commentaires : <?= $commentaries->rowCount() ?></span>
         </div>
     </div>
-    <!-- les conditions avec la boucle principale -->
+    <!-- affichage en focntion du rang utilisateur -->
 
     <?php if ($res['rank'] == 'admin') { ?>
+        <!-- bloc mes projets -->
         <div class="col-12 col-md-8 col-lg-6 bg-warning rounded mt-4 p-4">
             <div>
                 <h2 class="text-center "><i class="fa-solid fa-diagram-project"></i> Mes Projets:</h2>
@@ -97,6 +98,7 @@ ob_start();
             <?php } ?>
 		</div>	
       <?php  }?>
+      <!-- bloc mes articles -->
         <div class="col-12 col-md-8 col-lg-6 bg-warning rounded mt-4 p-4">
             <div>
                 <h2 class="text-center"><i class="fa-solid fa-newspaper"></i> Mes Articles :</h2>
@@ -120,6 +122,7 @@ ob_start();
         </div>
 <?php 
                 } ?>
+                <!-- bloc mes commentaires -->
 <div class="col-12 col-md-8 col-lg-6 bg-warning rounded my-4 p-4">
     <div>
         <h2 class="text-center"><i class="fa-solid fa-comments"></i> Mes commentaires :</h2>

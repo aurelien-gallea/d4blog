@@ -28,7 +28,7 @@ ob_start();
             while ($articles = $request->fetch()) {
                 $author = Checker::getAuthor("articles", $articles['id_user']);
             ?>
-
+            <!-- found = resultats de la recherche via js (si activé) -->
                 <div class="found">
 
                     <div class="card  mb-4">
@@ -39,7 +39,8 @@ ob_start();
                         <div>
                             <div class="card-header d-flex flex-column justify-content-between">
                                 <div class="mb-2 fs-5">écrit par : <span class=" fw-bold <?= Checker::colorMyRank($author['rank']) ?>"><?= $author['login'] ?></span>
-                                    <?php if ($articles['date'] != $articles['edit_date']) { ?>
+                                <!-- si l'article est modifié on affiche un bagde avec la date en tooltip -->
+                                <?php if ($articles['date'] != $articles['edit_date']) { ?>
                                         <span class="badge bg-primary mx-1" data-bs-toggle="tooltip" data-bs-placement="right" title="<?= DateToFr::dateFR($articles['edit_date']) ?>">Mis à jour</span>
 
                                     <?php  } ?>
@@ -52,7 +53,9 @@ ob_start();
                             <div class="vh-10"><?= htmlspecialchars_decode($articles['content']) ?> </div>
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-end gap-4">
-                            <div class="checkCom" data-bs-toggle="tooltip" data-bs-placement="top" title="commentaires">
+                            <!-- axe d'amélioration: ajouter une classe pour  trier articles par nombres de commentaires-->
+                            <div data-bs-toggle="tooltip" data-bs-placement="top" title="commentaires"> 
+                                <!-- oon vérifie que l'article a des commmentaires -->
                                 <?= Checker::articleGotComs($articles['id']) ?><i class="mx-2 fa-regular fa-comment"></i>
                             </div>
                         </div>
