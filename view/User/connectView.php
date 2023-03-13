@@ -32,10 +32,12 @@
                 <div class="card-body ">
                     <form  class="form text-center " method="post" action=".?page=connect">
                         <p class="row align-items-center justify-content-center">
+                            <!-- Login n'est affiché que sur les grands écrans -->
                             <label class="label col-4 fw-bold d-none d-md-block " for="login">Login :</label>
                             <input class="form-control-sm col-8" type="text" name="login" id="login" placeholder="Entrer votre pseudo" required >
                         </p>      
                         <p class="row align-items-center justify-content-center">
+                            <!-- Mot de passe n'est affiché que sur les grands écrans -->
                             <label class="label col-4 fw-bold d-none d-md-block" for="password">Mot de passe :</label>
                             <input class="form-control-sm col-8" type="password" name="password" id="password" placeholder="Entrer votre mot de passe" required>
                         </p>

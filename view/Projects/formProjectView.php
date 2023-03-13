@@ -2,7 +2,7 @@
 <div class="mt-5 text-center">
     <h2> Actualité </h2>
     <div class="mt-3 mx-auto w-50-md ">    
-        <!-- le contenu de $formform evolue selon que ce soit une creation ou une modification -->
+        <!-- le contenu de $form evolue selon que ce soit une creation ou une modification -->
         <?= $form ?>
 
             <p>
@@ -27,11 +27,7 @@
                 <textarea  class="form-control" name="content" id="mycontent" cols="30" rows="10" maxlength="10000"><?= $project["content"] ?></textarea>
             </p>    
         </div>
-                <!-- <p>
-                    <label  class="form-label" for="content"><h3>Texte :</h3></label>
-                    <textarea class="form-control" name="content" id="content" cols="50" rows="10"><?= $project["content"] ?></textarea>
-                </p>                -->
-          
+                         
             <!-- le contenu de $button evolue selon que ce soit une creation ou une modification -->
             <?= $button ?>
         </form> 

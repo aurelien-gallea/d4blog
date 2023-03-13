@@ -9,8 +9,9 @@
                 if ($_FILES["img"]["size"] < 3000000){                   
                     $informationsImage = pathinfo($_FILES["img"]["name"]);
                     $extensionImage = $informationsImage["extension"];
+                    // extensions autoriser
                     $extensionArray = ["png","gif","jpg","jpeg","webp"];
-
+                    // check extension
                     if (in_array($extensionImage,$extensionArray)){
                         $img = time().rand().rand().'.'.$extensionImage;
                         move_uploaded_file($_FILES["img"]["tmp_name"],"./public/src/img/".$img);

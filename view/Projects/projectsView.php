@@ -7,7 +7,7 @@ ob_start();
 ?>
 <div class="my-5">
 
-    <h1> Dernieres Actualités </h1>
+    <h1> Dernieres Actualitès </h1>
 <?php 
     if (isset($_GET["success"])){
     if ($_GET["success"] == 1) { ?>
@@ -51,19 +51,19 @@ while ($project = $requete->fetch()) {
                             // verifions si l'utilisateur à deja posté un like ou non sur ce projet
                             $res = $likes->checkIdUser($project["id"],$_SESSION["id"]);
                             if ($res === 0){ ?>
-                                <!-- Si l'utilisateur est connecté et n'a pas deja poster un like affiche un pouce vers le haut et un click => creer un like dasn la table des likes -->
+                                <!-- Si l'utilisateur est connecté et n'a pas deja posté un like affiche un pouce vers le haut et un click => creer un like dans la table des likes -->
                                 <span>Likes : <?=$like ?> </span><button class="btn ms-1" type="submit" name="like" id="like" value="<?= $project["id"] ?>"> <span class="ms-1 fa-regular fa-thumbs-up"></span></button>
                         <?php  } else { ?>
-                                <!-- Si l'utilisateur est connecté et a deja poster un like affiche un pouce vers le bas et un click => supprimer le like dans la table des likes -->
+                                <!-- Si l'utilisateur est connecté et a deja posté un like affiche un pouce vers le bas et un click => supprimer le like dans la table des likes -->
                                 <span>Likes : <?=$like ?> </span><button  class="btn ms-1"  type="submit" name="dislike" id="dislike" value="<?= $project["id"] ?>"><span class="ms-1 fa-regular fa-thumbs-down"></span></button>
                         <?php }} else { ?> 
-                                <!-- Si l'utilisateur n'est pas connécé affiche seulement le nombre de like -->
+                                <!-- Si l'utilisateur n'est pas connécté affiche seulement le nombre de like -->
                                 <span>Likes : <?=$like ?> </span>
                             <?php }  ?>                                              
                     </form > 
                 </div>
                 
-                <!-- reserver a l'admin -->
+                <!-- reservé a l'admin -->
                 <?php if (!empty($user['rank'])){
 									if ($user['rank'] == "admin"){ ?> 
                 
