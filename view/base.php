@@ -40,6 +40,8 @@ if(isset($_SESSION['id'])) $me = Checker::getLoginAndRank($_SESSION['id']);
         <div class="container">
             <?php require_once("./view/navbar.php") ?>
         </div>
+
+        <!-- Liseré de profil -->
         <?php if (isset($_SESSION['id'])) {
             
              ?>
@@ -55,6 +57,7 @@ if(isset($_SESSION['id'])) $me = Checker::getLoginAndRank($_SESSION['id']);
                         <!-- pour le fun un petit score de participation -->
                         <span><i class="fa-solid fa-trophy text-primary"></i> Mon score : <?= Checker::getMyScore($_SESSION['id']) ?></span>
                     </div>
+                    <!-- API Méteo -->
                     <div id="weather">
 
                     </div>
@@ -62,6 +65,8 @@ if(isset($_SESSION['id'])) $me = Checker::getLoginAndRank($_SESSION['id']);
             </div>
         <?php } ?>
     </header>
+
+    <!-- Alert en cas de succes  -->
     <?php if (isset($_SESSION['success'])) { ?>
         <div class="alert alert-primary position-absolute  mt-7 start-50 translate-middle w-100 container-md text-center"><?= $_SESSION["success"] ?></div>
 
@@ -69,7 +74,7 @@ if(isset($_SESSION['id'])) $me = Checker::getLoginAndRank($_SESSION['id']);
         }
        
     ?>
-
+    <!-- Alert en cas d'echec  -->
     <?php if (isset($_SESSION['error'])) { ?>
         <div class="alert alert-primary position-absolute  mt-7 start-50 translate-middle w-100 container-md text-center"><?= $_SESSION["error"] ?></div>
     <?php clearMessage() ;
@@ -77,7 +82,7 @@ if(isset($_SESSION['id'])) $me = Checker::getLoginAndRank($_SESSION['id']);
         
     ?>
 
-
+    
     <section class="flex-grow-1">
         <div class="container">
             <?= $content ?>

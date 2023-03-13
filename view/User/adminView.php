@@ -7,8 +7,10 @@ ob_start();
 <div class="my-5 fs-7" >
     <h2 class="mt-3"> Utilisateurs </h1>
     <div class="table-responsive">
-        <table class="table table-sm table-bordered border-danger align-middle mt-3 text-center ">
         
+        <table class="table table-sm table-bordered border-danger align-middle mt-3 text-center ">
+        <!-- Titre du tableau
+     -->
         <tr class="table-success h5">
             <th>
                 Login
