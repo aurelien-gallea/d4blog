@@ -87,7 +87,7 @@ ob_start();
         </div>
         <div>
             <?php if (isset($_SESSION['id'])) { ?>
-                <div class="fixed-bottom d-flex justify-content-end align-items-center mb-5 me-2 me-md-5">
+                <div class="d-flex justify-content-end align-items-center mb-5 me-2 me-md-5">
                     <div id="bubble" class="btn rounded-pill border border-3 border-primary  p-3 text-white  bg-color4 " data-bs-toggle="tooltip" data-bs-placement="top" title="Ouvrir">
                         <i class="fa-solid fa-comments fs-4"></i>
                     </div>

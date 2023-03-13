@@ -2,7 +2,7 @@
 if (!empty($_SESSION["id"])) {
     $user = Checker::getLoginAndRank($_SESSION["id"]);
 }
-$title = "Acceuil";
+$title = "Accueil";
 ob_start();
 ?>
 <div class="my-5">
